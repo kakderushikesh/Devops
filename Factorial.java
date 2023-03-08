@@ -1,7 +1,7 @@
 public class Factorial
 {
     public static void main(String[] args)
-    {	final int NUM_FACTS = 11;
+    {	final int NUM_FACTS = 5;
         for(int i = 0; i < NUM_FACTS; i++)
             System.out.println( i + "! is " + factorial(i));
     }
