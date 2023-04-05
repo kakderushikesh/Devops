@@ -1,23 +1,22 @@
 pipeline {
     agent any
-
-    stages {
+    stages{
         stage('checking python version') {
             steps {
                 bat 'python -V'
             }
         }
-        stage('REPO Cloning') {
+
+        stage('REPO Cloning'){
             steps {
-                bat 'xcopy /S "*" "C:/xampp/htdocs/Devops" /Y'
+                bat 'xcopy /S "*" "C:/xampp/htdocs" /Y'
             }
         }
-        stage('print done') {
-            steps {
+
+        stage('Print done'){
+            steps{
                 echo 'Done!'
             }
         }
-        
-        
     }
 }
