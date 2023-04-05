@@ -1,14 +1,23 @@
 pipeline {
     agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
-    }
+
     stages {
-        stage('Example') {
+        stage('checking python version') {
             steps {
-                echo 'Hello World'
+                bat 'python -V'
             }
         }
+        stage('REPO Cloning') {
+            steps {
+                bat 'xcopy /S "*" "C:/xampp/htdocs/Devops" /Y'
+            }
+        }
+        stage('print done') {
+            steps {
+                echo 'Done!'
+            }
+        }
+        
+        
     }
 }
